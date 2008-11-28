@@ -1,0 +1,47 @@
+9
+
+dir
+22
+svn+ssh://moxytron@moxytron.com/home/moxytron/svnroot/videoondemand/trunk/tmp
+svn+ssh://moxytron@moxytron.com/home/moxytron/svnroot/videoondemand
+
+
+
+2008-10-21T21:05:37.983445Z
+22
+moxytron
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0
+
+pids
+dir
+
+cache
+dir
+
+sessions
+dir
+
+sockets
+dir
+

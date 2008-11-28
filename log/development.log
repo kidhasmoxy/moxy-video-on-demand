@@ -1,0 +1,83 @@
+  [4;36;1mSQL (0.000292)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000128)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.002690)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.001697)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000242)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000137)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBackgroundrbQueueTable (20081021214503)
+  [4;36;1mSQL (0.002203)[0m   [0;1mCREATE TABLE "bdrb_job_queues" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "args" blob, "worker_name" varchar(255), "worker_method" varchar(255), "job_key" varchar(255), "taken" int, "finished" int, "timeout" int, "priority" int, "submitted_at" datetime, "started_at" datetime, "finished_at" datetime, "archived_at" datetime, "tag" varchar(255), "submitter_info" varchar(255), "runner_info" varchar(255), "worker_key" varchar(255), "scheduled_at" datetime) [0m
+  [4;35;1mSQL (0.001381)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20081021214503')[0m
+  [4;36;1mSQL (0.000257)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000142)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000177)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000148)[0m   [0mPRAGMA index_list("bdrb_job_queues")[0m
+allow_concurrency=true
+Defined connections: {"ActiveRecord::Base"=>#<ActiveRecord::Base::ConnectionSpecification:0x22878a8 @config={:adapter=>"sqlite3", :timeout=>5000, :database=>"db/development.sqlite3"}, @adapter_method="sqlite3_connection">}
+Active connections: {}
+Active connection name: ActiveRecord::Base
+allow_concurrency=true
+Defined connections: {"ActiveRecord::Base"=>#<ActiveRecord::Base::ConnectionSpecification:0x1134fc4 @adapter_method="sqlite3_connection", @config={:timeout=>5000, :database=>"db/development.sqlite3", :adapter=>"sqlite3"}>}
+Active connections: {}
+Active connection name: ActiveRecord::Base
+allow_concurrency=true
+Defined connections: {"ActiveRecord::Base"=>#<ActiveRecord::Base::ConnectionSpecification:0x2287920 @config={:adapter=>"sqlite3", :timeout=>5000, :database=>"db/development.sqlite3"}, @adapter_method="sqlite3_connection">}
+Active connections: {}
+Active connection name: ActiveRecord::Base
+allow_concurrency=true
+Defined connections: {"ActiveRecord::Base"=>#<ActiveRecord::Base::ConnectionSpecification:0x1134fc4 @adapter_method="sqlite3_connection", @config={:timeout=>5000, :database=>"db/development.sqlite3", :adapter=>"sqlite3"}>}
+Active connections: {}
+Active connection name: ActiveRecord::Base
+allow_concurrency=true
+Defined connections: {"ActiveRecord::Base"=>#<ActiveRecord::Base::ConnectionSpecification:0x1134efc @adapter_method="sqlite3_connection", @config={:timeout=>5000, :database=>"db/development.sqlite3", :adapter=>"sqlite3"}>}
+Active connections: {}
+Active connection name: ActiveRecord::Base
+allow_concurrency=true
+Defined connections: {"ActiveRecord::Base"=>#<ActiveRecord::Base::ConnectionSpecification:0x1134fc4 @adapter_method="sqlite3_connection", @config={:timeout=>5000, :database=>"db/development.sqlite3", :adapter=>"sqlite3"}>}
+Active connections: {}
+Active connection name: ActiveRecord::Base
+  [4;36;1mBdrbJobQueue Load (0.000435)[0m   [0;1mSELECT * FROM "bdrb_job_queues" WHERE ( worker_name = 'library_worker' AND taken = 0 AND scheduled_at <= '2008-10-21 22:20:23' ) LIMIT 1[0m
+  [4;36;1mBdrbJobQueue Load (0.000373)[0m   [0;1mSELECT * FROM "bdrb_job_queues" WHERE ( worker_name = 'transcode_worker' AND taken = 0 AND scheduled_at <= '2008-10-21 22:20:23' ) LIMIT 1[0m
+  [4;36;1mBdrbJobQueue Load (0.000388)[0m   [0;1mSELECT * FROM "bdrb_job_queues" WHERE ( worker_name = 'stream_worker' AND taken = 0 AND scheduled_at <= '2008-10-21 22:20:23' ) LIMIT 1[0m
+  [4;35;1mBdrbJobQueue Load (0.000272)[0m   [0mSELECT * FROM "bdrb_job_queues" WHERE ( worker_name = 'library_worker' AND taken = 0 AND scheduled_at <= '2008-10-21 22:20:27' ) LIMIT 1[0m
+  [4;35;1mBdrbJobQueue Load (0.000375)[0m   [0mSELECT * FROM "bdrb_job_queues" WHERE ( worker_name = 'transcode_worker' AND taken = 0 AND scheduled_at <= '2008-10-21 22:20:27' ) LIMIT 1[0m
+  [4;35;1mBdrbJobQueue Load (0.000362)[0m   [0mSELECT * FROM "bdrb_job_queues" WHERE ( worker_name = 'stream_worker' AND taken = 0 AND scheduled_at <= '2008-10-21 22:20:28' ) LIMIT 1[0m
+  [4;36;1mBdrbJobQueue Load (0.000347)[0m   [0;1mSELECT * FROM "bdrb_job_queues" WHERE ( worker_name = 'library_worker' AND taken = 0 AND scheduled_at <= '2008-10-21 22:20:32' ) LIMIT 1[0m
+  [4;36;1mBdrbJobQueue Load (0.000286)[0m   [0;1mSELECT * FROM "bdrb_job_queues" WHERE ( worker_name = 'transcode_worker' AND taken = 0 AND scheduled_at <= '2008-10-21 22:20:32' ) LIMIT 1[0m
+  [4;36;1mBdrbJobQueue Load (0.000419)[0m   [0;1mSELECT * FROM "bdrb_job_queues" WHERE ( worker_name = 'stream_worker' AND taken = 0 AND scheduled_at <= '2008-10-21 22:20:33' ) LIMIT 1[0m
+  [4;35;1mBdrbJobQueue Load (0.000288)[0m   [0mSELECT * FROM "bdrb_job_queues" WHERE ( worker_name = 'library_worker' AND taken = 0 AND scheduled_at <= '2008-10-21 22:20:37' ) LIMIT 1[0m
+  [4;35;1mBdrbJobQueue Load (0.000265)[0m   [0mSELECT * FROM "bdrb_job_queues" WHERE ( worker_name = 'transcode_worker' AND taken = 0 AND scheduled_at <= '2008-10-21 22:20:37' ) LIMIT 1[0m
+  [4;35;1mBdrbJobQueue Load (0.000269)[0m   [0mSELECT * FROM "bdrb_job_queues" WHERE ( worker_name = 'stream_worker' AND taken = 0 AND scheduled_at <= '2008-10-21 22:20:38' ) LIMIT 1[0m
+allow_concurrency=true
+Defined connections: {"ActiveRecord::Base"=>#<ActiveRecord::Base::ConnectionSpecification:0x228786c @config={:adapter=>"sqlite3", :timeout=>5000, :database=>"db/development.sqlite3"}, @adapter_method="sqlite3_connection">}
+Active connections: {}
+Active connection name: ActiveRecord::Base
+allow_concurrency=true
+Defined connections: {"ActiveRecord::Base"=>#<ActiveRecord::Base::ConnectionSpecification:0x1134fc4 @adapter_method="sqlite3_connection", @config={:timeout=>5000, :database=>"db/development.sqlite3", :adapter=>"sqlite3"}>}
+Active connections: {}
+Active connection name: ActiveRecord::Base
+allow_concurrency=true
+Defined connections: {"ActiveRecord::Base"=>#<ActiveRecord::Base::ConnectionSpecification:0x1134fc4 @adapter_method="sqlite3_connection", @config={:timeout=>5000, :database=>"db/development.sqlite3", :adapter=>"sqlite3"}>}
+Active connections: {}
+Active connection name: ActiveRecord::Base
+allow_concurrency=true
+Defined connections: {"ActiveRecord::Base"=>#<ActiveRecord::Base::ConnectionSpecification:0x1134efc @adapter_method="sqlite3_connection", @config={:timeout=>5000, :database=>"db/development.sqlite3", :adapter=>"sqlite3"}>}
+Active connections: {}
+Active connection name: ActiveRecord::Base
+  [4;36;1mBdrbJobQueue Load (0.000443)[0m   [0;1mSELECT * FROM "bdrb_job_queues" WHERE ( worker_name = 'library_worker' AND taken = 0 AND scheduled_at <= '2008-10-21 22:21:01' ) LIMIT 1[0m
+  [4;36;1mBdrbJobQueue Load (0.000562)[0m   [0;1mSELECT * FROM "bdrb_job_queues" WHERE ( worker_name = 'stream_worker' AND taken = 0 AND scheduled_at <= '2008-10-21 22:21:01' ) LIMIT 1[0m
+  [4;36;1mBdrbJobQueue Load (0.000390)[0m   [0;1mSELECT * FROM "bdrb_job_queues" WHERE ( worker_name = 'transcode_worker' AND taken = 0 AND scheduled_at <= '2008-10-21 22:21:01' ) LIMIT 1[0m
+  [4;35;1mBdrbJobQueue Load (0.000413)[0m   [0mSELECT * FROM "bdrb_job_queues" WHERE ( worker_name = 'library_worker' AND taken = 0 AND scheduled_at <= '2008-10-21 22:21:06' ) LIMIT 1[0m
+  [4;35;1mBdrbJobQueue Load (0.000365)[0m   [0mSELECT * FROM "bdrb_job_queues" WHERE ( worker_name = 'stream_worker' AND taken = 0 AND scheduled_at <= '2008-10-21 22:21:06' ) LIMIT 1[0m
+  [4;35;1mBdrbJobQueue Load (0.000392)[0m   [0mSELECT * FROM "bdrb_job_queues" WHERE ( worker_name = 'transcode_worker' AND taken = 0 AND scheduled_at <= '2008-10-21 22:21:06' ) LIMIT 1[0m

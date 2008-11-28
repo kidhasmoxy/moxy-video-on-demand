@@ -1,0 +1,41 @@
+9
+
+dir
+23
+svn+ssh://moxytron@moxytron.com/home/moxytron/svnroot/videoondemand/trunk/vendor/plugins/backgroundrb/generators
+svn+ssh://moxytron@moxytron.com/home/moxytron/svnroot/videoondemand
+
+
+
+2008-10-22T23:08:22.709650Z
+23
+moxytron
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0
+
+bdrb_migration
+dir
+
+worker
+dir
+

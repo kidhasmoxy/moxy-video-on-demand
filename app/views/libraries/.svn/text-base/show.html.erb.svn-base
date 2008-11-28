@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @library.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @library.description %>
+</p>
+
+<p>
+  <b>Path:</b>
+  <%=h @library.path %>
+</p>
+
+
+<%= link_to 'Edit', edit_library_path(@library) %> |
+<%= link_to 'Back', libraries_path %>
